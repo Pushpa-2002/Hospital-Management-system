@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="doctor-nav-item" style="display: none;"><a href="doctors.html">Doctors</a></li>
+                <li id="patient-nav-item" style="display: none;"><a href="patient.html">Patients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="login-nav-item"><a href="login.html">Login</a></li> <!-- Initially visible -->
+                <li id="logout-nav-item" style="display: none;"><a href="#" id="logout-link">Logout</a></li> <!-- Initially hidden -->
+                <li id="appointments-nav-item" style="display: none;"><a href="appointment.html">Appointments</a></li>            </ul>
+        </nav>
+    </header>
+
+    <section class="login-form">
+        <h2>Login</h2>
+        <form id="loginForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="password">Password:</label>
+            <input type="password" id="password" required>
+
+            <button type="submit">Login</button>
+        </form>
+        <p>Don't have an account? <a href="signup.html">Sign up</a></p>
+    </section>
+
+    <script>
+      document.getElementById("loginForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    const username = document.getElementById("username").value;
+    const password = document.getElementById("password").value;
+
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+
+    // Check user credentials
+    const user = users.find(user => user.username === username && user.password === password);
+
+    if (!user) {
+        alert("Invalid credentials!");
+        return;
+    }
+
+    // Store logged-in user info using a consistent key name
+    localStorage.setItem("userLoggedIn", 'true');  // This should match the key in your navbar check
+
+    window.location.href = "appointment.html";
+    document.getElementById("login-nav-item").style.display = 'none';
+    document.getElementById("logout-nav-item").style.display = 'inline';
+    document.getElementById("appointments-nav-item").style.display = 'inline';
+    alert("Login successful!");
+});
+
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+</html>

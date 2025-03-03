@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us</title>
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="doctor-nav-item" style="display: none;"><a href="doctors.html">Doctors</a></li>
+                <li id="patient-nav-item" style="display: none;"><a href="patient.html">Patients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="login-nav-item"><a href="login.html">Login</a></li>
+                <li id="logout-nav-item" style="display: none;"><a href="#" id="logout-link">Logout</a></li>
+                <li id="appointments-nav-item" style="display: none;"><a href="appointment.html">Appointments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="contact-info">
+        <h2>Contact Information</h2>
+        <p>Address: 123 Hospital St, City, Country</p>
+        <p>Phone: +123 456 7890</p>
+    </section>
+
+    <section class="contact-form">
+        <h2>Contact Form</h2>
+        <form id="contactForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="message">Message:</label>
+            <textarea id="message" name="message" required></textarea>
+
+            <button type="submit">Send</button>
+        </form>
+        <p id="form-message" style="color: green; display: none;">Thank you for contacting us! We will get back to you soon.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Hospital Management System</p>
+    </footer>
+
+    <script>
+        
+        document.getElementById('contactForm').addEventListener('submit', function (e) {
+            e.preventDefault(); 
+
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            const message = document.getElementById('message').value;
+
+            if (!name || !email || !message) {
+                alert('Please fill out all fields.');
+                return;
+            }
+
+            // Create a contact object
+            const contact = {
+                name,
+                email,
+                message,
+                timestamp: new Date().toLocaleString() // Add a timestamp
+            };
+  
+            let contacts = JSON.parse(localStorage.getItem('contacts')) || [];
+            contacts.push(contact);
+            localStorage.setItem('contacts', JSON.stringify(contacts));
+
+            document.getElementById('form-message').style.display = 'block';
+
+            document.getElementById('contactForm').reset();
+
+            console.log('Contact form submitted:', contact);
+        });
+    </script>
+</body>
+</html>

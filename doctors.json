@@ -1,0 +1,140 @@
+{
+  "doctors": [
+    {
+      "id": 1,
+      "name": "Dr. John Smith",
+      "specialty": "Cardiologist",
+      "shift": "9:00 AM - 3:00 PM",
+      "contact": "johnsmith@example.com",
+      "phone": "+1 234 567 8901",
+      "department": "Cardiology",
+      "status": "Available"
+    },
+    {
+      "id": 2,
+      "name": "Dr. Sarah Johnson",
+      "specialty": "Dermatologist",
+      "shift": "10:00 AM - 4:00 PM",
+      "contact": "sarahjohnson@example.com",
+      "phone": "+1 234 567 8902",
+      "status": "Available"
+    },
+    {
+      "id": 3,
+      "name": "Dr. Emily Brown",
+      "specialty": "Pediatrician",
+      "shift": "12:00 PM - 6:00 PM",
+      "contact": "emilybrown@example.com",
+      "phone": "+1 234 567 8903",
+      "status": "Available"
+    },
+    {
+      "id": 4,
+      "name": "Dr. Michael Davis",
+      "specialty": "Orthopedic Surgeon",
+      "shift": "8:00 AM - 2:00 PM",
+      "contact": "michaeldavis@example.com",
+      "phone": "+1 234 567 8904",
+      "status": "Available"
+    },
+    {
+      "id": 5,
+      "name": "Dr. Laura Wilson",
+      "specialty": "Neurologist",
+      "shift": "2:00 PM - 8:00 PM",
+      "contact": "laurawilson@example.com",
+      "phone": "+1 234 567 8905",
+      "status": "Leave"
+    },
+    {
+      "id": 6,
+      "name": "Dr. William Taylor",
+      "specialty": "Endocrinologist",
+      "shift": "10:00 AM - 5:00 PM",
+      "contact": "williamtaylor@example.com",
+      "phone": "+1 234 567 8906",
+      "status": "Available"
+    },
+    {
+      "id": 7,
+      "name": "Dr. Olivia Martinez",
+      "specialty": "Oncologist",
+      "shift": "9:00 AM - 3:00 PM",
+      "contact": "oliviamartinez@example.com",
+      "phone": "+1 234 567 8907",
+      "status": "Leave"
+    },
+    {
+      "id": 8,
+      "name": "Dr. Benjamin Lee",
+      "specialty": "Psychiatrist",
+      "shift": "1:00 PM - 7:00 PM",
+      "contact": "benjaminlee@example.com",
+      "phone": "+1 234 567 8908",
+      "status": "Leave"
+    },
+    {
+      "id": 9,
+      "name": "Dr. Sophia Anderson",
+      "specialty": "Ophthalmologist",
+      "shift": "11:00 AM - 5:00 PM",
+      "contact": "sophiaanderson@example.com",
+      "phone": "+1 234 567 8909",
+      "status": "Available"
+    },
+    {
+      "id": 10,
+      "name": "Dr. Daniel Thomas",
+      "specialty": "Pulmonologist",
+      "shift": "8:00 AM - 2:00 PM",
+      "contact": "danielthomas@example.com",
+      "phone": "+1 234 567 8910",
+      "status": "Available"
+    },
+    {
+      "id": 11,
+      "name": "Dr. Ava Hernandez",
+      "specialty": "Urologist",
+      "shift": "2:00 PM - 8:00 PM",
+      "contact": "avahernandez@example.com",
+      "phone": "+1 234 567 8911",
+      "status": "Available"
+    },
+    {
+      "id": 12,
+      "name": "Dr. James Robinson",
+      "specialty": "Nephrologist",
+      "shift": "9:00 AM - 3:00 PM",
+      "contact": "jamesrobinson@example.com",
+      "phone": "+1 234 567 8912",
+      "status": "Leave"
+    },
+    {
+      "id": 13,
+      "name": "Dr. Isabella Clark",
+      "specialty": "Gastroenterologist",
+      "shift": "10:00 AM - 4:00 PM",
+      "contact": "isabellaclark@example.com",
+      "phone": "+1 234 567 8913",
+      "status": "Available"
+    },
+    {
+      "id": 14,
+      "name": "Dr. Ethan Lewis",
+      "specialty": "Rheumatologist",
+      "shift": "12:00 PM - 6:00 PM",
+      "contact": "ethanlewis@example.com",
+      "phone": "+1 234 567 8914",
+      "status": "Available"
+    },
+    {
+      "id": 15,
+      "name": "Dr. Mia Walker",
+      "specialty": "Allergist",
+      "shift": "8:00 AM - 2:00 PM",
+      "contact": "miawalker@example.com",
+      "phone": "+1 234 567 8915",
+      "status": "Available"
+    }
+  ]
+}

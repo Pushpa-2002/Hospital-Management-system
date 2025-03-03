@@ -1,0 +1,124 @@
+{
+    "patients": [
+        {
+            "id": 1,
+            "name": "John Doe",
+            "contact": "johndoe@example.com",
+            "phone": "+1 123-456-7890",
+            "address": "123 Main St, New York, NY",
+            "admit_date": "2024-02-20",
+            "doctor": "Dr. Smith",
+            "ward_no": 5,
+            "bed_no": 12,
+            "causes": "Fever and cough"
+        },
+        {
+            "id": 2,
+            "name": "Jane Smith",
+            "contact": "janesmith@example.com",
+            "phone": "+1 987-654-3210",
+            "address": "456 Oak St, Los Angeles, CA",
+            "admit_date": "2024-02-15",
+            "doctor": "Dr. Brown",
+            "ward_no": 3,
+            "bed_no": 7,
+            "causes": "Fractured leg"
+        },
+        {
+            "id": 3,
+            "name": "Michael Johnson",
+            "contact": "michaelj@example.com",
+            "phone": "+1 555-789-1234",
+            "address": "789 Pine St, Chicago, IL",
+            "admit_date": "2024-02-22",
+            "doctor": "Dr. Green",
+            "ward_no": 2,
+            "bed_no": 4,
+            "causes": "Heart condition"
+        },
+        {
+            "id": 4,
+            "name": "Emily Davis",
+            "contact": "emilyd@example.com",
+            "phone": "+1 321-654-9870",
+            "address": "101 Birch St, Houston, TX",
+            "admit_date": "2024-02-18",
+            "doctor": "Dr. White",
+            "ward_no": 6,
+            "bed_no": 10,
+            "causes": "Migraine"
+        },
+        {
+            "id": 5,
+            "name": "William Martinez",
+            "contact": "williamm@example.com",
+            "phone": "+1 222-333-4444",
+            "address": "222 Maple St, Phoenix, AZ",
+            "admit_date": "2024-02-10",
+            "doctor": "Dr. Adams",
+            "ward_no": 4,
+            "bed_no": 2,
+            "causes": "Food poisoning"
+        },
+        {
+            "id": 6,
+            "name": "Olivia Wilson",
+            "contact": "oliviaw@example.com",
+            "phone": "+1 111-222-3333",
+            "address": "333 Cedar St, Philadelphia, PA",
+            "admit_date": "2024-02-12",
+            "doctor": "Dr. Harris",
+            "ward_no": 1,
+            "bed_no": 5,
+            "causes": "High blood pressure"
+        },
+        {
+            "id": 7,
+            "name": "James Anderson",
+            "contact": "jamesa@example.com",
+            "phone": "+1 777-888-9999",
+            "address": "444 Elm St, San Diego, CA",
+            "admit_date": "2024-02-25",
+            "doctor": "Dr. Lewis",
+            "ward_no": 7,
+            "bed_no": 11,
+            "causes": "Pneumonia"
+        },
+        {
+            "id": 8,
+            "name": "Sophia Thomas",
+            "contact": "sophiat@example.com",
+            "phone": "+1 555-666-7777",
+            "address": "555 Spruce St, Dallas, TX",
+            "admit_date": "2024-02-17",
+            "doctor": "Dr. Walker",
+            "ward_no": 5,
+            "bed_no": 8,
+            "causes": "Severe allergy"
+        },
+        {
+            "id": 9,
+            "name": "Benjamin Harris",
+            "contact": "benjaminh@example.com",
+            "phone": "+1 444-555-6666",
+            "address": "666 Ash St, San Francisco, CA",
+            "admit_date": "2024-02-21",
+            "doctor": "Dr. Clark",
+            "ward_no": 3,
+            "bed_no": 3,
+            "causes": "Asthma attack"
+        },
+        {
+            "id": 10,
+            "name": "Isabella Lewis",
+            "contact": "isabellal@example.com",
+            "phone": "+1 999-000-1111",
+            "address": "777 Redwood St, Seattle, WA",
+            "admit_date": "2024-02-19",
+            "doctor": "Dr. Turner",
+            "ward_no": 2,
+            "bed_no": 6,
+            "causes": "Anemia"
+        }
+    ]
+}

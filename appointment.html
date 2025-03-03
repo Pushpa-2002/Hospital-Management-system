@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Today's Appointments</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        section .appointments-list {
+            padding: 20px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+        
+        .appointment-cards {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin: 0 auto;
+        }
+
+        .appointment-card {
+            background-color: #f9f9f9;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            text-align: center;
+            width: 250px;
+            transition: transform 0.2s;
+            flex-shrink: 0;
+        }
+
+        .appointment-card:hover {
+            transform: scale(1.05);
+        }
+
+        .appointment-info {
+            margin: 10px 0;
+        }
+
+        .appointment-info span {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .appointment-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .doctor-smith {
+            background-color: #e6f7ff;
+        }
+
+        .doctor-johnson {
+            background-color: #f1f7e8;
+        }
+
+        .doctor-williams {
+            background-color: #f9f1e6;
+        }
+
+        .doctor-davis {
+            background-color: #e6f2e6;
+        }
+
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .appointment-cards {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .appointment-card {
+                width: 90%; /* Make cards responsive on smaller screens */
+                max-width: 350px;
+                margin: 10px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            h2 {
+                font-size: 1.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="doctor-nav-item" style="display: none;"><a href="doctors.html">Doctors</a></li>
+                <li id="patient-nav-item" style="display: none;"><a href="patient.html">Patients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="login-nav-item"><a href="login.html">Login</a></li> <!-- Initially visible -->
+                <li id="logout-nav-item" style="display: none;"><a href="#" id="logout-link">Logout</a></li> <!-- Initially hidden -->
+                <li id="appointments-nav-item" style="display: none;"><a href="appointment.html">Appointments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="appointments-list">
+        <h2>Today's Appointments</h2>
+        <div id="appointmentsTable" class="appointment-cards"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Hospital Management System</p>
+    </footer>
+
+    <script>
+        // Dummy data for today's appointments
+        const appointments = [
+            { patientName: "John Doe", doctorName: "Dr. Smith", date: "2025-02-25", time: "10:00 AM" },
+            { patientName: "Alice Green", doctorName: "Dr. Johnson", date: "2025-02-25", time: "11:30 AM" },
+            { patientName: "Robert Brown", doctorName: "Dr. Williams", date: "2025-02-25", time: "02:00 PM" },
+            { patientName: "Mary Lee", doctorName: "Dr. Davis", date: "2025-02-25", time: "03:30 PM" },
+            { patientName: "James White", doctorName: "Dr. Smith", date: "2025-02-25", time: "04:00 PM" },
+            { patientName: "Sophie Black", doctorName: "Dr. Johnson", date: "2025-02-25", time: "09:00 AM" },
+            { patientName: "Liam Gray", doctorName: "Dr. Williams", date: "2025-02-25", time: "01:00 PM" },
+            { patientName: "Ella Blue", doctorName: "Dr. Davis", date: "2025-02-25", time: "02:30 PM" },
+            { patientName: "Lucas Green", doctorName: "Dr. Smith", date: "2025-02-25", time: "11:00 AM" },
+            { patientName: "Chloe Brown", doctorName: "Dr. Johnson", date: "2025-02-25", time: "03:00 PM" }
+        ];
+
+        const container = document.getElementById('appointmentsTable');
+        appointments.forEach(appointment => {
+            let doctorClass = '';
+            if (appointment.doctorName === "Dr. Smith") doctorClass = 'doctor-smith';
+            if (appointment.doctorName === "Dr. Johnson") doctorClass = 'doctor-johnson';
+            if (appointment.doctorName === "Dr. Williams") doctorClass = 'doctor-williams';
+            if (appointment.doctorName === "Dr. Davis") doctorClass = 'doctor-davis';
+
+            let card = `<div class="appointment-card ${doctorClass}">
+                            <div class="appointment-info">
+                                <p><span>Patient Name:</span> ${appointment.patientName}</p>
+                                <p><span>Doctor:</span> ${appointment.doctorName}</p>
+                                <p><span>Date:</span> ${appointment.date}</p>
+                                <p><span>Time:</span> ${appointment.time}</p>
+                            </div>
+                        </div>`;
+            container.innerHTML += card;
+        });
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>

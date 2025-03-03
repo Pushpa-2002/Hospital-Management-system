@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doctors</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        section .doctors-list {
+            padding: 20px;
+            margin: 0 auto;
+            position: relative;
+        }
+
+        h2 {
+            text-align: center;
+            margin-bottom: 40px;
+            color: #333;
+        }
+
+        .doctor-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 10px;
+            margin: 15px;
+            text-align: center;
+            transition: transform 0.2s;
+            cursor: pointer;
+        }
+
+        .doctor-card:hover {
+            transform: scale(1.05);
+        }
+        a{
+            text-decoration: none;
+            list-style: none;
+        }
+
+        .doctor-info {
+            margin: 0px 0;
+        }
+
+        .doctor-info span {
+            font-weight: bold;
+            color: #555;
+        }
+
+        .doctor-info p {
+            margin: 5px 0;
+            color: #777;
+        }
+
+        .doctor-card img {
+            width: 250px;
+            height: 250px;
+            border-radius: 20px;
+            object-fit: cover;
+            margin-bottom: 15px;
+        }
+
+        .book-appointment-btn {
+            background-color: #484848;
+            color: white !important;
+            padding: 10px 10px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 5px !important;
+            
+        }
+
+        .book-appointment-btn:hover {
+            background-color: #3558c2;
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px 0;
+            position: relative;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li id="doctor-nav-item" style="display: none;"><a href="doctors.html">Doctors</a></li>
+                <li id="patient-nav-item" style="display: none;"><a href="patient.html">Patients</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li id="login-nav-item"><a href="login.html">Login</a></li> <!-- Initially visible -->
+                <li id="logout-nav-item" style="display: none;"><a href="#" id="logout-link">Logout</a></li> <!-- Initially hidden -->
+                <li id="appointments-nav-item" style="display: none;"><a href="appointment.html">Appointments</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section class="doctors-list">
+        <h2>Doctors List</h2>
+        <div id="doctorsTable" class="doctor-cards"></div>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Hospital Management System</p>
+    </footer>
+
+    <script>
+         fetch('doctors.json')
+        .then(response => response.json())
+        .then(data => {
+            const container = document.getElementById('doctorsTable');
+            data.doctors.forEach(doctor => {
+                let card = `<div class="doctor-card">
+                                <img src="https://cdn.prod.website-files.com/62d4f06f9c1357a606c3b7ef/65ddf3cdf19abaf5688af2f8_shutterstock_1933145801%20(1).jpg" alt="${doctor.name}">
+                                <div class="doctor-info">
+                                    <p><span>ID:</span> ${doctor.id}</p>
+                                    <p><span>Name:</span> ${doctor.name}</p>
+                                    <p><span>Specialty:</span> ${doctor.specialty}</p>
+                                    <p><span>Shift:</span> ${doctor.shift}</p>
+                                    <p><span>Contact:</span> ${doctor.contact}</p>
+                                    <p><span>Phone:</span> ${doctor.phone}</p>
+                                    <p><span>Status:</span> ${doctor.status}</p>
+                                </div>
+                                 <a href="appointment-form.html?doctorName=${encodeURIComponent(doctor.name)}&specialty=${encodeURIComponent(doctor.specialty)}" class="book-appointment-btn">Book Appointment</a>
+                                 </div>`;
+                container.innerHTML += card;
+            });
+        })
+        .catch(error => console.error('Error loading doctors:', error));
+    </script>
+    <script src="js/script.js"></script>
+
+</body>
+
+</html>
